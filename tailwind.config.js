@@ -12,7 +12,7 @@ export default {
         'circular-web': ['circularweb', 'sanf-serif'],
         'robert-medium': ['robert-medium', 'sanf-serif'],
         'robert-regular': ['robert-regular', 'sanf-serif'],
-      }
+      },
     },
   },
   plugins: [],
