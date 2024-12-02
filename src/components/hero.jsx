@@ -28,7 +28,7 @@ const getVideoSrc = (index) => 'videos/hero-$(index).mp4'
               <div onClick={handleMiniVdClick} className='origin-center'>
               <video
                   ref={nextVideoRef}
-                  src={getVideoSrc((currentIndex % totalVideos) + 1)}
+                  src={getVideoSrc((currentIndex) + 1)}
                   loop
                   muted
                   id="current-video"
