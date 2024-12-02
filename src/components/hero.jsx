@@ -14,10 +14,10 @@ const Hero = () => {
 const handleMiniVdClick = () => {
   setHasClicked(true);
 
-  setCurrentIndex((prevIndex) => prevIndex + 1);
+  setCurrentIndex((prevIndex) => (prevIndex) + 1);
 };
 
-const getVideoSrc = (index) => 'videos/hero-$(index).mp4'
+const getVideoSrc = (index) => 'videos/hero-${index}.mp4'
 
   return (
     <><div className='relative h-dvh w-screen overflow-x-hidden'>
@@ -29,7 +29,7 @@ const getVideoSrc = (index) => 'videos/hero-$(index).mp4'
               <div onClick={handleMiniVdClick} className='origin-center'>
               <video
                   ref={nextVideoRef}
-                  src={getVideoSrc((currentIndex) + 1)}
+                  src={getVideoSrc(currentIndex + 1)}
                   loop
                   muted
                   id="current-video"
