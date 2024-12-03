@@ -73,6 +73,9 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
                  <h1 className='special-font hero-heading text-blue-100'>
                     redefi<b>n</b>e
                     </h1>
+                    <p className='mb-5 max-w-64 font-robert-regular text-blue-100'>
+                        Enter The Metagame Layer
+                    </p>
               </div>
             </div>
       </div>
