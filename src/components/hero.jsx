@@ -36,7 +36,7 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
               transition-all duration-500 ease-in hover:scale-100 hover:opacity-100'>
               <video
                   ref={nextVideoRef}
-                  src={getVideoSrc(currentIndex + 1)}
+                  src={getVideoSrc(upcomingVideoIndex)}
                   loop
                   muted
                   id="current-video"
@@ -45,6 +45,10 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
                 />
               </div>
             </div>
+              <video 
+                ref={nextVideoRef}
+                src={getVideoSrc(currentIndex)}
+              />
          </div>
       </div>
     </div>
