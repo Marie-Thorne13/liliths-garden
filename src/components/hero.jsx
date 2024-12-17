@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import Button from "./Button";
 
 const Hero = () => {
 
@@ -57,7 +58,7 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
               <video
                 src={getVideoSrc(currentIndex === totalVideos - 1
                     ? 1 : currentIndex)}
-                autoPlay
+                // autoPlay
                 loop
                 muted
                 className='absolute left-0 top-0 size-full object-cover object-center'
@@ -76,6 +77,7 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
                     <p className='mb-5 max-w-64 font-robert-regular text-blue-100'>
                         Enter The Metagame Layer
                     </p>
+                    <Button id= 'watch-trailer' title='Watch-Trailer'/>
               </div>
             </div>
       </div>
