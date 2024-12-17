@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
+import { TiLocationArrow } from "react-icons/ti";
 
 const Hero = () => {
 
@@ -77,7 +78,7 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
                     <p className='mb-5 max-w-64 font-robert-regular text-blue-100'>
                         Enter The Metagame Layer
                     </p>
-                    <Button id= 'watch-trailer' title='Watch-Trailer'/>
+                    <Button id= 'watch-trailer' title='Watch Trailer' leftIcon={<TiLocationArrow/>} containerClass='bg-yellow-100 flex-center gap-1'/>
               </div>
             </div>
       </div>
