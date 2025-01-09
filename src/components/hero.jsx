@@ -82,6 +82,10 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
               </div>
             </div>
       </div>
+      <h1 className='special-font hero-heading absolute bottom-5
+                right-5 z-40 text-black'>
+                thor<b>n</b>e
+                </h1>
     </div>
       </>
   )}
