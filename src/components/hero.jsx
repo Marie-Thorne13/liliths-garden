@@ -1,8 +1,11 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
 
@@ -12,7 +15,7 @@ const Hero = () => {
     const [loading, setLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0);
   
-    const totalVideos = 3;
+    const totalVideos = 4;
     const nextVideoRef = useRef(null);
 
     const handleVideoLoad = () => {
@@ -26,6 +29,12 @@ const handleMiniVdClick = () => {
 
   setCurrentIndex(upcomingVideoIndex);
 };
+
+useEffect(() => {
+  if(loadedVideos === totalVideos -1) {
+    setLoading(false);
+  }
+}, [loadedVideos])
 
 //GSAP for Page Animations
 useGSAP(() => {
@@ -76,6 +85,17 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
   return (
     <><div className='relative h-dvh w-screen overflow-x-hidden'>
+       
+      {loading && (
+        <div className='flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50'>
+          <div className='three-body'>
+            <div className='three-body__dot'/>
+            <div className='three-body__dot'/>
+            <div className='three-body__dot'/>
+          </div>
+        </div>
+      )}
+
       <div id="video-frame" className="relative z-10 h-dvh w-screen overflow-x-hidden 
     rounded-lg bg-blue-75" >
         <div>
