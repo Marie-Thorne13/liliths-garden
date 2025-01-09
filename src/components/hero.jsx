@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
+import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
 
@@ -24,6 +25,10 @@ const handleMiniVdClick = () => {
 
   setCurrentIndex(upcomingVideoIndex);
 };
+
+useGSAP(() => {
+
+}, { dependencies: [currentIndex], revertOnUpdate: true})
 
 const getVideoSrc = (index) => `videos/hero-${index}.mp4`; 
 
@@ -59,7 +64,7 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
               <video
                 src={getVideoSrc(currentIndex === totalVideos - 1
                     ? 1 : currentIndex)}
-                // autoPlay
+                autoPlay
                 loop
                 muted
                 className='absolute left-0 top-0 size-full object-cover object-center'
@@ -83,7 +88,7 @@ const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
             </div>
       </div>
       <h1 className='special-font hero-heading absolute bottom-5
-                right-5 z-40 text-black'>
+                right-5 text-black'>
                 thor<b>n</b>e
                 </h1>
     </div>
